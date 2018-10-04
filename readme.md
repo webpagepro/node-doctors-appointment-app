@@ -134,25 +134,11 @@ I see a list of all confirmed appointments.
 __#6__
 ```
 As a Doctor
-When I click the "unconfirmed appointments" link
-I should be redirected to /appointments/unconfirmed
-```
-
-__#7__
-```
-As a Doctor
 When I visit /appointments/unconfirmed
 I see a list of all unconfirmed appointments.
 ```
 
-__#8__
-```
-As a Doctor
-When I click the "completed appointments" link
-I should be redirected to /appointments/completed
-```
-
-__#9__
+__#7__
 ```
 As a Doctor
 When I visit /appointments/completed
