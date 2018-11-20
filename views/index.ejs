@@ -3,13 +3,50 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style>
+    .container{
+      border: 1px solid #000;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .login{
+      width:400px;
+      margin:4px auto;
+    }
+
+    .register{
+      width:400px;
+      margin:4px auto;
+    }
+    
+    input["type=submit"]{border-radius:6px;
+       background-color:#333;
+       color:#fff;
+    }
+
+    input["type=submit"]:hover{
+    background-color:#ccc;
+    color:#000;
+ }
+    </style>
   </head>
   <body>
     <h3>Hello enter your name below</h3>
     <h4>Currently logged in as - <%=name %></h4>
     <form action="/createname" method="post">
-      <input type="text" name="name" >
+      <input type="text" name="patient_name" >
       <input type="submit" name="" value="">
     </form>
+
+  <div class="register">
+    <h3>Register</h3>
+    <form action="/register" method="post" class="register">
+      <input type="text" name="reg_name" placeholder="Name">
+      <input type="email" name="reg_email" placeholder="Email">
+      <input type="password" name="reg_password" placeholder="Password">
+      <button type="submit">Register</button>
+    </form>
+</div>
   </body>
 </html>
