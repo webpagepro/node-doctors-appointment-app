@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .container{
+      border: 1px solid #000;
+      display:flex;
+      flex-direction:column;
+    }
+    h3{
+        margin:0 auto;
+        padding-top:10px;
+    }
+
+    .login{
+      width:150px;
+      margin:4px auto;
+    }
+
+    .register{
+      width:150px;
+      margin:4px auto;
+    }
+    
+    button{border-radius:6px;
+       background-color:#333;
+       color:#fff;  
+        margin-top:7px;
+    }
+
+    button:hover{
+    background-color:#ccc;
+    color:#000;
+ 
+ }
+
+ input{
+     margin:3px;
+ }
+    </style>
+  </head>
+  <body>
+
+  <div class="container">
+  <h3>DOCTORS</h3>
+  <div class="login">
+  <h4>Login (working)</h4>
+  <form action="/login" method="post" class="login">
+    <input type="email" name="log_email" placeholder="Email">
+    <input type="password" name="log_password" placeholder="Password">
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+  <div class="register">
+
+    <h4> Registration (working)</h4>
+    <form action="/register" method="post" class="register">
+      <input type="text" name="reg_name" placeholder="Name">
+      <input type="email" name="reg_email" placeholder="Email">
+      <input type="password" name="reg_password" placeholder="Password">
+      <button type="submit">Register</button>
+    </form>
+</div>
+<p> 
+  </body>
+</html>

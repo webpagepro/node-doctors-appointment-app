@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('patients').insert([
         {patient_name: 'Erin Williams'},
         {patient_name: 'Jessica DiRocco'},
-        {patient_name: 'Jeremy Richards'}
+        {patient_name: 'Jeremy Richards'},
       ]);
     });
 };

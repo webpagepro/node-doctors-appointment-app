@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
         .inTable("patients")
         .onDelete("CASCADE")
         .notNullable()
-        .index();
+       .index();
       table.integer("doctor_id")
         .references("id")
         .inTable("doctors")
@@ -19,7 +19,7 @@ exports.up = function(knex, Promise) {
         .inTable("notes")
         .onDelete("CASCADE")
         .notNullable()
-        .index();
+       .index();
       table.timestamps(true, true);
       })
   };
