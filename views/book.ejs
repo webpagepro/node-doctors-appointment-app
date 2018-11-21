@@ -39,6 +39,11 @@
  input{
      margin:3px;
  }
+
+ .page_title{
+  margin:0 auto;
+
+}
     </style>
   </head>
   <body>
@@ -47,12 +52,12 @@
 
   <div class="register">
 
-    <h4> Book Appointment</h4>
-    <form action="/register" method="post" class="book">
-      <input type="text" name="book_name" placeholder="Name">
-      <input type="email" name="book_date" placeholder="Date">
-      <input type="password" name="book_reason" placeholder="Reason">
-      <input type="password" name="book_details" placeholder="Details">
+    <div class="page_title"><h4> Book Appointment</h4></div>
+    <form action="/book" method="post" class="book">
+      <input type="text" name="book_name" placeholder="Patient's Name">
+      <input type="text" name="book_date" placeholder="Date">
+      <input type="text" name="book_reason" placeholder="Reason">
+      <input type="text" name="book_details" placeholder="Details">
       <button type="submit">Register</button>
     </form>
 </div>

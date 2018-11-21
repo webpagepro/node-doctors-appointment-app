@@ -29,7 +29,7 @@ const knex = require('../db/knex.js')
         .then((results) => {
             let signed_user = results[0];
             if(!signed_user){
-                res.redirect('/register');
+                res.redirect('/login');
                 return;
             }
            
@@ -47,10 +47,10 @@ req.session.save(()=>{
         }
         })
      },
-
+     
      logout: (req, res) => {
-         req.session.destroy();
-        res.redirect("/");
-     }
+        req.session.destroy()
+        res.redirect('/')
+      }
      
 }
