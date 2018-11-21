@@ -3,15 +3,17 @@ const knex = require("../db/knex.js");
 
 module.exports = {
 index: function(req, res) {
-  knex('patients')
-  .then((pats) => {
-   
-    res.render('bookings', {pats: pats[0].patient_name});
+  knex('bookings')
+  .then((booked) => {
+    res.render('bookings', {booked: booked[0].patient_name});
     
-  console.log(pats);
+  console.log(booked);
   })
 
 },
+
+
+
 
 schedule: (req, res) => {
   knex("patients")
