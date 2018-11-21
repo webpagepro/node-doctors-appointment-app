@@ -10,15 +10,17 @@
       flex-direction:column;
     }
 
-    .login{
-      width:400px;
-      margin:4px auto;
+    .page_title{
+      margin:0 auto;
+    }
+    .boxes{
+      border: 1px solid black;
+      margin: 10px;
+      padding: 10px;
+      width:250px;
+      flex:1;
     }
 
-    .register{
-      width:400px;
-      margin:4px auto;
-    }
     
     input["type=submit"]{border-radius:6px;
        background-color:#333;
@@ -28,26 +30,35 @@
     input["type=submit"]:hover{
     background-color:#ccc;
     color:#000;
-
-    .doctors{
+  }
+    .doctor_login a{
       border: 1px solid black;
-      flex:1;
+    float:right;
       margin: 10px;
       padding: 10px;
-    }
  }
+
+  .book a{
+    border: 1px solid black;
+    float:right;
+      margin: 10px;
+      padding: 10px;
+  }
     </style>
 
   </head>
   <body>
   <div class="container">
-  <div class="login">
-  <h3>DISPLAY AVAILABLE DOCTORS</h3>
+  <div class="page_title">  <h3>DISPLAY AVAILABLE DOCTORS</h3> </div>
+  <div class="doctor_login"><a href="/doctors">DOCTORS LOGIN</a></div>
   
+   <div class="boxes">
+  <% for(let i = 0; i < doctors.length; i++){ %>
+<%= doctors[i] %>
+<% } %>
 
-
-     
-      <p><h3><a href="/doctors">DOCTORS LOGIN</a></p>
+     <div class="book"><a href="/book">Book</a></div>
+    
 
     </div>
 

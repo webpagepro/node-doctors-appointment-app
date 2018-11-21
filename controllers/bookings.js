@@ -2,14 +2,21 @@ const knex = require("../db/knex.js");
 
 
 module.exports = {
+index: function(req, res) {
+  knex('patients')
+  .then((pats) => {
+    res.render('bookings', {pats: pats[0].patient_name});
+  console.log(pats);
+  })
 
+},
 
-available: (req, res) => {
-  knex("doctors")
-.then((docs)=>{
-    console.log(docs);
+schedule: (req, res) => {
+  knex("patients")
+.then((pats)=>{
+    console.log(pats);
 
-      res.redirect("/")
+      res.redirect("/bookings")
     })
 
 }

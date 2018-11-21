@@ -19,7 +19,7 @@ const knex = require('../db/knex.js')
             doctor_password: req.body.reg_password
         })
         .then(( )=> {
-            res.redirect('/');
+            res.redirect('/login');
         })
     },
 
@@ -29,14 +29,14 @@ const knex = require('../db/knex.js')
         .then((results) => {
             let signed_user = results[0];
             if(!signed_user){
-                res.redirect('/');
+                res.redirect('/register');
                 return;
             }
            
             if(signed_user.doctor_password == req.body.log_password){
                 req.session.doctor_id = signed_user.id;
                 req.session.save(() => {
-                    res.redirect('/');
+                    res.redirect('/bookings');
                 })
 
             }else{
@@ -50,7 +50,7 @@ req.session.save(()=>{
 
      logout: (req, res) => {
          req.session.destroy();
-       // res.redirect("/");
+        res.redirect("/");
      }
      
 }

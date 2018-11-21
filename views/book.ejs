@@ -19,7 +19,7 @@
       margin:4px auto;
     }
 
-    .register{
+    .book{
       width:150px;
       margin:4px auto;
     }
@@ -44,23 +44,15 @@
   <body>
 
   <div class="container">
-  <h3>DOCTORS</h3>
-  <div class="login">
-  <h4>Login</h4>
-  <form action="/login" method="post" class="login">
-    <input type="email" name="log_email" placeholder="Email">
-    <input type="password" name="log_password" placeholder="Password">
-    <button type="submit">Login</button>
-  </form>
-</div>
 
   <div class="register">
 
-    <h4> Registration </h4>
-    <form action="/register" method="post" class="register">
-      <input type="text" name="reg_name" placeholder="Name">
-      <input type="email" name="reg_email" placeholder="Email">
-      <input type="password" name="reg_password" placeholder="Password">
+    <h4> Book Appointment</h4>
+    <form action="/register" method="post" class="book">
+      <input type="text" name="book_name" placeholder="Name">
+      <input type="email" name="book_date" placeholder="Date">
+      <input type="password" name="book_reason" placeholder="Reason">
+      <input type="password" name="book_details" placeholder="Details">
       <button type="submit">Register</button>
     </form>
 </div>

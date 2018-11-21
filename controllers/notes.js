@@ -8,7 +8,7 @@ module.exports = {
       booking_id: req.params.id
     })
     .then(()=>{
-      res.redirect('/')
+      res.redirect(`/notes/${booking_id}`);
     })
   },
 }
