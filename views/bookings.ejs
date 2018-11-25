@@ -10,9 +10,11 @@
       flex-direction:column;
     }
 
-    .login{
+    .patient{
       width:400px;
-      margin:4px auto;
+      margin:4px;
+      display:flex;
+      flex-direction:column;
     }
 
     .register{
@@ -36,12 +38,19 @@
   <div class="login">
   <h2>SHOW BOOKINGS PER DOCTOR</h2>
   <div class="patient">Patient's Name:&nbsp;&nbsp;</div>
-  
+ 
   <% for(let i = 0; i < booked.length; i++){ %>
+   <ul><li>
   <%= booked[i].patient_name %>
-
+</li>
+<li>
+<%= booked[i].booking_date %>
+</li>
+<li>
+<%= booked[i].booking_reason %>
+</li></ul>
   <% } %>
-
+  
 
 
 </div>
