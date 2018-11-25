@@ -7,7 +7,7 @@ const knex = require('../db/knex.js')
         knex('bookings')
         .then((booked) => {
             res.render('book')
-            console.log(booked);
+           // console.log(booked);
 
         })
     },
@@ -18,10 +18,10 @@ const knex = require('../db/knex.js')
         patient_name: req.body.book_name,
         booking_date: req.body.book_date,
         booking_reason: req.body.book_reason,
-        booking_details: req.body.book_reason
+        booking_details: req.body.book_details
         })
         .then(( )=> {
-            res.redirect('/bookig');
+            res.redirect('/bookings');
         })
     }
      

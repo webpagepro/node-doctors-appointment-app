@@ -12,15 +12,15 @@ module.exports = function(app){
   app.post('/register', doctors.register);
   app.post('/login', doctors.login);
   app.get('/doctors', doctors.portal);
-  app.get('/book', book.index);
-  app.post('/book', book.make);
+  app.get('/book/:id', book.index);
+ app.post('/book/', book.make);
 
   app.get('/bookings', bookings.index);
-
+app.post("/notes/:id", notes.add);
 app.use(authMiddleware);
   
 
-  app.post("/notes/:id", notes.add);
+  
   app.get('/logout', doctors.logout);
 
 }

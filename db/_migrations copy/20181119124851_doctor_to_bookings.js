@@ -20,7 +20,14 @@ exports.up = function(knex, Promise) {
         .onDelete("CASCADE")
         .notNullable()
        .index();
-      table.timestamps(true, true);
+      table.integer("booking_id")
+      .references("id")
+      .inTable("booking_id")
+      .onDelete("CASCADE")
+      .notNullable()
+     .index();
+     table.timestamps(true, true);
+
       })
   };
   
