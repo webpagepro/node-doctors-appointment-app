@@ -5,7 +5,7 @@ module.exports = {
 index: function(req, res) {
   knex('bookings')
   .then((booked) => {
-    res.render('bookings', {booked: booked[0].patient_name});
+    res.render('bookings', {booked: booked});
     
   console.log(booked);
   })

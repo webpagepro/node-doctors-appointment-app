@@ -21,7 +21,7 @@ const knex = require('../db/knex.js')
         booking_details: req.body.book_details
         })
         .then(( )=> {
-            res.redirect('/bookings');
+            res.redirect('/');
         })
     }
      
