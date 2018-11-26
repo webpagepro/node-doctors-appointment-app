@@ -17,7 +17,7 @@ index: function(req, res) {
 
 schedule: (req, res) => {
   knex('bookings')
-  .join('doctor_to_bookings', 'bookings.id', 'bookings.id')
+  .join('doctor_to_bookings', 'booking_id', 'bookings.id')
    .join('doctors', 'doctors.id', 'doctor_to_bookings.doctor_id')
     .where('doctors.id', req.session.doctor_id)
     .then((booked) => {
