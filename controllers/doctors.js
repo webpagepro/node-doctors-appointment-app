@@ -6,7 +6,6 @@ const knex = require('../db/knex.js')
     if(!req.session.doctor_id){
          req.session.doctor_id = [];
           }
-
            
        res.render("doctors"); 
      },
@@ -15,8 +14,8 @@ const knex = require('../db/knex.js')
         knex('doctors')
         .insert({
         doctor_name: req.body.reg_name,
-            doctor_email: req.body.reg_email,
-            doctor_password: req.body.reg_password
+        doctor_email: req.body.reg_email,
+        doctor_password: req.body.reg_password
         })
         .then(( )=> {
             res.redirect('/login');

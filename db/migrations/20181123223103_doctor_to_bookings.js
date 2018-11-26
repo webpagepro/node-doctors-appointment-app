@@ -1,12 +1,6 @@
 exports.up = function(knex, Promise) {
     return knex.schema.createTable("doctor_to_bookings", (table) => {
       table.increments();
-      table.integer("patient_id")
-        .references("id")
-        .inTable("patients")
-        .onDelete("CASCADE")
-        .notNullable()
-       .index();
       table.integer("doctor_id")
         .references("id")
         .inTable("doctors")

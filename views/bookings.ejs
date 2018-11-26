@@ -48,12 +48,28 @@
 </li>
 <li>
 <%= booked[i].booking_reason %>
-</li></ul>
+</li>
+<li> <% if(booked[i].booking_confirmed == true){ 
+  %>
+<%= "Confirmed" %>
+</li>
+<% } %>
+<% if(booked[i].booking_confirmed == false){ 
+  %>
+<%= "Unconfirmed" %>
+</li>
+<% if(booked[i].booking_complete == true){ 
+  %>
+<%= "Completed" %>
+</li>
+
+<% } %>
+<% } %>
+</ul>
   <% } %>
   
 
 
 </div>
-<p> 
-  </body>
+<p> <a href="/logout">Log Out</a></p>  </body>
 </html>

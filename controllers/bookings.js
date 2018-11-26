@@ -16,13 +16,15 @@ index: function(req, res) {
 
 
 schedule: (req, res) => {
-  knex("patients")
-.then((pats)=>{
-    console.log(pats);
-
-      res.redirect("/bookings")
-    })
+  knex('bookings')
+  .join('doctor_to_bookings', 'bookings.id', 'bookings.id')
+   .join('doctors', 'doctors.id', 'doctor_to_bookings.doctor_id')
+    .where('doctors.id', req.session.doctor_id)
+    .then((booked) => {
+      console.log(booked);
+        res.render('bookings', {booked: booked});
+      })
+    }
 
 }
 
-}

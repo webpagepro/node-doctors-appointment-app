@@ -14,19 +14,19 @@ module.exports = function(app){
   app.get('/doctors', doctors.portal);
   app.get('/book/:id', book.index);
  app.post('/book/', book.make);
-
-  app.get('/bookings', bookings.index);
-app.post("/notes/:id", notes.add);
-app.use(authMiddleware);
+ 
   
 
+app.use(authMiddleware);
+ app.get('/bookings', bookings.schedule);
+app.post("/notes/:id", notes.add);
   
   app.get('/logout', doctors.logout);
 
 }
 
 function authMiddleware (req, res, next){
-  if(!req.session.user_id){
+  if(!req.session.doctor_id){
       res.redirect('/');
   }
       else{
