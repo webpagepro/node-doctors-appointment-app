@@ -7,26 +7,31 @@
     .container{
       border: 1px solid #000;
       display:flex;
-      flex-direction:column;
-
+      flex-wrap:wrap;
+      width:100%;
     }
 
     .page_title{
-      margin:0 auto;
+      min-width:100%;
+      text-align:center;
+      
+      margin: 10px;
+      padding: 10px;
     }
 
     .boxes-container{
       display:flex;
-      flex-direction:row;
-      flex:1
     }
+
     .boxes{
       border: 1px solid black;
       margin: 10px;
       padding: 10px;
       width:250px;
-    }
+      height:50px;
+ 
 
+    }
     
     input["type=submit"]{border-radius:6px;
        background-color:#333;
@@ -39,28 +44,37 @@
   }
     .doctor_login a{
       border: 1px solid black;
-    float:right;
-      margin: 10px;
-      padding: 10px;
+    
+ }
+ .doctor_login {
+text-align:right;
+right:60px; position:relative;
  }
 
+.book{
+  text-align:right;
+  
+  
+}
   .book a{
-    border: 1px solid black;
-    float:right;
-      margin: 10px;
-      padding: 10px;
-  }
+    border: 1px solid black;margin: 10px;
+  padding: 10px;
+      }
+
     </style>
 
   </head>
   <body>
   <div class="container">
-  <div class="page_title">  <h3>DISPLAY AVAILABLE DOCTORS</h3> </div>
-  <div class="doctor_login"><a href="/doctors">DOCTORS LOGIN</a></div>
+  <div class="page_title"> DISPLAY AVAILABLE DOCTORS  
+  <div class="doctor_login"><a href="/doctors">DOCTORS LOGIN</a></div></div>
+
   
-  <div class="boxes-container">
   <% for(let i = 0; i < docs.length; i++){ %>
-   <div class="boxes">
+  <div class="boxes-container">
+  <div class="boxes">
+
+ 
  <%= docs[i].doctor_name; %>
 
      <div class="book"><a href="/book/<%=docs[i].id%>">Book</a></div>

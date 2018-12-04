@@ -18,7 +18,7 @@ const knex = require('../db/knex.js')
         doctor_password: req.body.reg_password
         })
         .then(( )=> {
-            res.redirect('/login');
+            res.redirect('/bookings');
         })
     },
 

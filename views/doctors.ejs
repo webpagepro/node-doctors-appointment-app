@@ -60,6 +60,8 @@
     <form action="/register" method="post" class="register">
       <input type="text" name="reg_name" placeholder="Name">
       <input type="email" name="reg_email" placeholder="Email">
+      <input type="hidden" name="reg_doctor">
+
       <input type="password" name="reg_password" placeholder="Password">
       <button type="submit">Register</button>
     </form>
@@ -67,3 +69,5 @@
 
   </body>
 </html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js" integrity="sha256-pMea2a/7QK1RhYpSh7rIpKSajxu4j61VmpJCJ31KrfA=" crossorigin="anonymous"></script>

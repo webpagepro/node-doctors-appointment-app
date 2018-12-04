@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable("bookings", (table) => {
       table.increments();
       table.string("patient_name");
+      table.integer("booking_doctor_id");
       table.string("booking_reason");
       table.string("booking_details");
       table.date("booking_date");

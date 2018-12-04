@@ -53,12 +53,12 @@
 
   <div class="register">
 
-    <form action="/book" method="post" class="book">
+    <form action="/book<%=id%>" method="post" class="book">
       <input type="text" name="book_name" placeholder="Patient's Name">
       <input type="text" name="book_date" placeholder="Date">
       <input type="text" name="book_reason" placeholder="Reason">
       <input type="text" name="book_details" placeholder="Details">
-      <button type="submit">Register</button>
+      <button type="submit">Book Appointment</button>
     </form>
 </div>
 <p> 
