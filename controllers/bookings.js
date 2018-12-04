@@ -7,7 +7,7 @@ index: function(req, res) {
   .then((booked) => {
     res.render('bookings', {booked: booked});
     
-  console.log(booked);
+  //console.log(booked);
   })
 
 },
@@ -17,9 +17,7 @@ index: function(req, res) {
 
 schedule: (req, res) => {
   knex('bookings')
-  .join('doctor_to_bookings', 'doctor_to_bookings.booking_id', 'bookings.id')
-   .join('doctors', 'doctors.id', 'doctor_to_bookings.doctor_id')
-    .where('doctors.id', req.session.doctor_id)
+  .where('booking_doctor_id', req.session.doctor_id)
     .then((booked) => {
       console.log(booked);
         res.render('bookings', {booked: booked});

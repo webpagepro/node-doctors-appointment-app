@@ -31,13 +31,20 @@
     background-color:#ccc;
     color:#000;
  }
+
+ ul{
+   list-style:none;
+ }
+ ul:nth-child(2n-1){
+   background-color:#ccc;
+ } 
     </style>
   </head>
   <body>
   <div class="container">
   <div class="login">
   <h2>SHOW BOOKINGS PER DOCTOR</h2>
-  <div class="patient">Patient's Name:&nbsp;&nbsp;</div>
+  <div class="patient">Patient's Information:&nbsp;&nbsp;</div>
  
   <% for(let i = 0; i < booked.length; i++){ %>
    <ul><li>
