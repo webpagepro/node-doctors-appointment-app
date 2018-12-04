@@ -13,7 +13,7 @@ module.exports = function(app){
   app.post('/login', doctors.login);
   app.get('/doctors', doctors.portal);
   app.get('/book/:id', book.index);
-  app.post('/book?:id', book.make);
+  app.post('/book/:id', book.make);
  
    app.get('/bookings', bookings.schedule);
 
