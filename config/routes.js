@@ -24,8 +24,8 @@ module.exports = function(app){
   app.get('/bookings/confirmed', bookings.confirmed);
   app.get('/bookings/unconfirmed', bookings.unconfirmed);
   app.get('/bookings/completed', bookings.completed);
-app.get('/view/:id', view.render);
-  //app.post('/update/:id', review.update )
+  app.get('/view/:id', view.render);
+  app.post('/edit/:id', view.edit);
   app.get("/notes/:id", notes.add);
   app.post("/notes/:id", notes.add);
   app.get('/logout', doctors.logout);
@@ -40,5 +40,6 @@ function authMiddleware (req, res, next){
           next();
          
       }
+      
   }
   

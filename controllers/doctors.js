@@ -30,7 +30,7 @@ const knex = require('../db/knex.js')
             if(!signed_user){
                 res.redirect('/login');
                 return;
-            }
+            } 
            
             if(signed_user.doctor_password == req.body.log_password){
                 req.session.doctor_id = signed_user.id;
@@ -51,5 +51,4 @@ req.session.save(()=>{
         req.session.destroy()
         res.redirect('/')
       }
-     
 }

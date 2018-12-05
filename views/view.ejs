@@ -53,16 +53,15 @@
 
   <div class="register">
 
-    <form action="/update/<%=id%>" method="post" class="book">
-    <% for(let i = 0; i < booked.length; i++){ %>
+    <form action="/edit/<%=booked[0].id%>" method="post" class="book">
 
-      <input type="text" name="book_name" placeholder="<%= booked[i].patient_name %>">
-      <input type="text" name="book_date" placeholder="<%= booked[i].booking_date %>">
-      <input type="text" name="book_reason" placeholder="<%= booked[i].booking_reason %>">
-      <input type="text" name="book_details" placeholder="<%= booked[i].booking_details %>">
-      <button type="submit">Book Appointment</button>
+      <input type="text" name="book_name" value="<%= booked[0].patient_name %>">
+      <input type="text" name="book_date" value="<%= booked[0].booking_date %>">
+      <input type="text" name="book_reason" value="<%= booked[0].booking_reason %>">
+      <input type="text" name="book_details" value="<%= booked[0].booking_details %>">
+      <button type="submit">Update Appointment</button>
 
-      <% } %>
+  
 
 
     </form>
