@@ -61,6 +61,17 @@ margin:8px 0 0 8px;}
   position: relative;
   margin-right:8px;
 }
+.view a{
+  text-decoration:none;
+  width: 40px;
+  height: 20px;
+}
+
+.view a:hover{
+  text-decoration:none;
+  color:green;
+}
+
  .bookings{
    width:50%;
  }
@@ -83,7 +94,7 @@ margin:8px 0 0 8px;}
 <li><h4>
 <%= booked[i].booking_reason %></h4>
 </li>
-<div class="view"><a href='/update/<%=booked[i].id%>'>View</a></div>
+<div class="view"><a href='/view/<%=booked[i].id%>'>View</a></div>
  
 </ul>
   <% } %>

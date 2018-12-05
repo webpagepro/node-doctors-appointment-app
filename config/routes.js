@@ -5,6 +5,7 @@ const bookings = require('../controllers/bookings');
 const notes = require("../controllers/notes.js");
 const index = require("../controllers/index.js");
 const book = require("../controllers/book.js");
+//const view = require("../controllers/view.js");
 
 module.exports = function(app){
 
@@ -18,8 +19,12 @@ module.exports = function(app){
 
 
   app.use(authMiddleware);
+
   app.get('/bookings', bookings.schedule);
- // app.get('/update/:id', review.update);
+  app.get('/bookings/confirmed', bookings.confirmed);
+  app.get('/bookings/unconfirmed', bookings.unconfirmed);
+  app.get('/bookings/completed', bookings.completed);
+//app.get('/view/:id', view.edit);
   //app.post('/update/:id', review.update )
   app.get("/notes/:id", notes.add);
   app.post("/notes/:id", notes.add);
