@@ -75,10 +75,33 @@ margin:8px 0 0 8px;}
  .bookings{
    width:50%;
  }
-    </style>
+
+ .options{
+  display:flex;
+  flex-direction:row;
+ }
+
+ .confirmed, .unconfirmed, .completed{
+flex:1;
+width: 33%;
+height: 30px;
+border:1px solid #000;
+
+ }
+
+ .confirmed a, .unconfirmed a, .completed a{
+   text-decoration:none;
+marfin:0 auto;padding:8px;
+ }
+ </style>
   </head>
   <body>
   <div class="container">
+  <div class="options">
+  <div class="confirmed"><a href="/bookings/confirmed">Confirmed</a></div>
+  <div class="unconfirmed"><a href="/bookings/unconfirmed">Unconfirmed</a></div>
+  <div class="completed"><a href="/bookings/completed">Completed</a></div>
+  </div>
   <div class="login">
   <h2>Welcome <%=doc[0].doctor_name%></h2>
   <div class="patient">Patient's Information:&nbsp;&nbsp;</div>
