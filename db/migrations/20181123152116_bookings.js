@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
       table.integer("booking_doctor_id");
       table.string("booking_reason");
       table.string("booking_details");
-      table.date("booking_date");
+      table.string("booking_date");
       table.boolean("booking_confirmed");
       table.boolean("booking_complete");
       table.timestamps(true, true);

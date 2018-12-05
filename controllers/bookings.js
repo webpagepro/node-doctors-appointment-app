@@ -12,7 +12,19 @@ index: function(req, res) {
 
 },
 
-
+update: function(req, res) {
+knex('bookings')
+  .update(req.body)
+   .where('id', req.params.doctor_id)
+    .then(() => {req.session.doctor_id = results[0];
+  knex('users').where('id', req.params.id).then((results) => {
+    req.session.doctor = results[0];
+    req.session.save(()=>{
+      res.redirect('/bookings');
+    })
+  })
+})
+},
 
 
 schedule: (req, res) => {

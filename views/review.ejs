@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <title></title>
     <style>
-    .container, body{
+    .container{
       border: 1px solid #000;
-      margin:0 auto;
- 
+      display:flex;
+      flex-direction:column;
     }
 
     .patient{
@@ -32,35 +32,15 @@
     color:#000;
  }
 
- h2{
-
- }
-
  ul{
    list-style:none;
- border:1px solid #000;
-margin:8px 0 0 8px;}
- /* ul:nth-child(2n-1){
+ }
+ ul:nth-child(2n-1){
    background-color:#ccc;
- } */
+ } 
  .bdate{
    float:right;
-   padding:8px 4px;
-    font-weight: bold;
  }
- .view  {
-  padding: 8px 4px;
-  font-weight: bold;
-  border: 1px solid #000;
-  width: 40px;
-  height: 20px;
-  z-index: 1;
-  text-decoration: none;
-  float: right;
-  top: -50px;
-  position: relative;
-  margin-right:8px;
-}
  .bookings{
    width:50%;
  }
@@ -68,30 +48,44 @@ margin:8px 0 0 8px;}
   </head>
   <body>
   <div class="container">
+  <div class="edit"><a href='/update'>Edit Booking</a></div>
   <div class="login">
   <h2>Welcome <%=doc[0].doctor_name%></h2>
   <div class="patient">Patient's Information:&nbsp;&nbsp;</div>
  <div class="bookings">
   <% for(let i = 0; i < booked.length; i++){ %>
-   <ul>
-   <li class="bdate">
+   <ul><li><b>
+  <%= booked[i].patient_name %></b>
+</li>
+<li><b>
+<%= booked[i].booking_reason %></b>
+</li>
+<li class="bdate">
 <%= booked[i].booking_date %>
 </li>
-<li><h3>
-  <%= booked[i].patient_name %></h3>
+
+<li> <% if(booked[i].booking_confirmed == true){ 
+  %>
+<%= "Confirmed" %>
 </li>
-<li><h4>
-<%= booked[i].booking_reason %></h4>
+<% } %>
+<% if(booked[i].booking_confirmed == false){ 
+  %>
+<%= "Unconfirmed" %>
 </li>
-<div class="view"><a href='/update/<%=booked[i].id%>'>View</a></div>
- 
+<% if(booked[i].booking_complete == true){ 
+  %>
+<%= "Completed" %>
+</li>
+
+<% } %>
+<% } %>
 </ul>
   <% } %>
-
+  
 </div>
 
 
 </div>
-
 <p> <a href="/logout">Log Out</a></p>  </body>
 </html>
