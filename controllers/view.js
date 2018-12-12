@@ -27,7 +27,7 @@ edit: function(req, res){
     })
     .where('bookings.id', bid)
     .then(( )=> {
-        res.redirect(`/view/${bid}`);
+        res.redirect(`/bookings`);
     })
 },
 
